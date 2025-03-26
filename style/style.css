@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Nunito:wght@400;500&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -49,7 +51,7 @@ body {
   padding: 20px;
   border-radius: 16px;
   background-color: #fff9f3;
-  box-shadow: 
+  box-shadow:
     0 12px 35px rgba(210, 190, 170, 0.18),
     0 6px 12px rgba(210, 190, 170, 0.12);
   border: 1px solid rgba(245, 233, 223, 0.7);
@@ -177,7 +179,6 @@ button:active {
   background-color: #d7ebf7;
 }
 
-/* Remove status bar */
 body::before {
   display: none;
 }
