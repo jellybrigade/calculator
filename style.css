@@ -1,87 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', 'Nunito', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff5e4;
+  background-image: radial-gradient(#ffe2c8 10%, transparent 11%),
+                    radial-gradient(#ffe2c8 10%, transparent 11%);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-attachment: fixed;
+}
+
 .blueBtn {
-    background-color: #2196F3;
+  background-color: #c5e1ee;
+  color: #444444;
 }
 
 .orangeBtn {
-    background-color: #FF9800;
+  background-color: #ffccd4;
+  color: #444444;
 }
 
 .greenBtn {
-    background-color: #4CAF50;
+  background-color: #f5eee6;
+  color: #444444;
 }
 
 #calculator {
-    display: grid;
-    grid-template-rows: auto repeat(5, 1fr);
-    grid-template-areas:
-        "display"
-        "acrow"
-        "toprow"
-        "midrow"
-        "botrow"
-        "zerorow";
-    width: 300px;
-    height: 400px;
-    gap: 5px;
-    padding: 10px;
-    border: 2px solid black;
-    background-color: #ffedb0
+  display: grid;
+  grid-template-rows: auto repeat(5, 1fr);
+  grid-template-areas:
+      "display"
+      "acrow"
+      "toprow"
+      "midrow"
+      "botrow"
+      "zerorow";
+  width: 340px;
+  height: 540px;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #fff9f3;
+  box-shadow: 
+    0 12px 35px rgba(210, 190, 170, 0.18),
+    0 6px 12px rgba(210, 190, 170, 0.12);
+  border: 1px solid rgba(245, 233, 223, 0.7);
+}
+
+#calculator::before {
+  display: none;
 }
 
 #display {
-    grid-area: display;
-    border: 1px solid black;
-    background-color: #ffffff;
-    text-align: right;
-    padding: 12px 6px;
-    min-height: 45px;
+  grid-area: display;
+  border: none;
+  background-color: #fefaf6;
+  border-radius: 12px;
+  text-align: right;
+  padding: 15px;
+  margin-bottom: 15px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: 1px solid rgba(235, 220, 210, 0.8);
+  box-shadow: inset 0 1px 3px rgba(210, 190, 170, 0.1);
 }
 
-#display p{
-    font-size: 24px;
-    margin: 8px;
+#display::after {
+  display: none;
+}
+
+#display p {
+  font-size: 42px;
+  margin: 0;
+  color: #444444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 54px;
+  line-height: 54px;
+  font-weight: 500;
 }
 
 #ACRow {
-    grid-area: acrow;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  grid-area: acrow;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 #topRow {
-    grid-area: toprow;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  grid-area: toprow;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 #midRow {
-    grid-area: midrow;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  grid-area: midrow;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 #botRow {
-    grid-area: botrow;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  grid-area: botrow;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 #zeroRow {
-    grid-area: zerorow;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 5px;
+  grid-area: zerorow;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
 }
 
 button {
-    width: 100%;
-    box-shadow: 0px 0px 1px
+  width: 100%;
+  height: 65px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f5eee6;
+  color: #444444;
+  box-shadow: 
+    0 3px 6px rgba(210, 190, 170, 0.12),
+    0 1px 2px rgba(210, 190, 170, 0.1);
+  border: 1px solid rgba(235, 220, 210, 0.7);
+  position: relative;
 }
 
-button:hover{
-    filter:grayscale(80%)
+button::before {
+  display: none;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(210, 190, 170, 0.16);
+  filter: brightness(1.02);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 1px 2px rgba(210, 190, 170, 0.1);
+}
+
+#equal {
+  background-color: #ffbcc7;
+}
+
+#zero {
+  border-radius: 12px;
+}
+
+#AC, #plusMinus, #percent {
+  background-color: #c5e1ee;
+}
+
+#division, #multiply, #subtract, #add {
+  background-color: #d7ebf7;
+}
+
+/* Remove status bar */
+body::before {
+  display: none;
 }
