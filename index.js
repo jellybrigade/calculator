@@ -64,11 +64,15 @@ const nine = document.getElementById("nine").addEventListener("click", () => num
 
 const dot = document.getElementById("dot").addEventListener("click", () => number.innerHTML += ".")
 const equal = document.getElementById("equal").addEventListener("click", function(){
-    secondNumber = parseFloat(number.innerHTML);
+    if(operator === "")
+    {
+        return;
+    }
+    secondNumber = number.innerHTML === "" ? 0 : parseFloat(number.innerHTML);
     calculate(firstNumber, secondNumber, operator)
 });
 
-function calculate() {
+function calculate(firstNumber, secondNumber, operator) {
     let finalNumber;
     
     switch(operator) {
@@ -82,6 +86,11 @@ function calculate() {
             finalNumber = firstNumber * secondNumber;
             break;
         case '/':
+            if(secondNumber == 0)
+            {
+                number.innerHTML = "Your mom's weight";
+                return;
+            }
             finalNumber = firstNumber / secondNumber;
             break;
         case '%':
@@ -93,4 +102,5 @@ function calculate() {
     
     number.innerHTML = finalNumber;
     firstNumber = finalNumber;
+    operator = "";
 }
