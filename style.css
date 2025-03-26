@@ -1,0 +1,87 @@
+.blueBtn {
+    background-color: #2196F3;
+}
+
+.orangeBtn {
+    background-color: #FF9800;
+}
+
+.greenBtn {
+    background-color: #4CAF50;
+}
+
+#calculator {
+    display: grid;
+    grid-template-rows: auto repeat(5, 1fr);
+    grid-template-areas:
+        "display"
+        "acrow"
+        "toprow"
+        "midrow"
+        "botrow"
+        "zerorow";
+    width: 300px;
+    height: 400px;
+    gap: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #ffedb0
+}
+
+#display {
+    grid-area: display;
+    border: 1px solid black;
+    background-color: #ffffff;
+    text-align: right;
+    padding: 12px 6px;
+    min-height: 45px;
+}
+
+#display p{
+    font-size: 24px;
+    margin: 8px;
+}
+
+#ACRow {
+    grid-area: acrow;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+#topRow {
+    grid-area: toprow;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+#midRow {
+    grid-area: midrow;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+#botRow {
+    grid-area: botrow;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+#zeroRow {
+    grid-area: zerorow;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 5px;
+}
+
+button {
+    width: 100%;
+    box-shadow: 0px 0px 1px
+}
+
+button:hover{
+    filter:grayscale(80%)
+}
